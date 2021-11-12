@@ -2,82 +2,80 @@
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head>
+    <head>
 
-<meta charset="utf-8">
+        <meta charset="utf-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-<title>Signit - @yield('title')</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-</head>
-
-<body>
-
-<section class="pageHeader">
-
-<div class="container mx-auto">
-
-<h1>Sign It!</h1>
-
-</div>
-
-</section>
+        <title>Signit - @yield('title')</title>
 
 
 
-<ul class="navbar">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-<li><a href="/">Home</a></li>
+    </head>
 
-@if (Auth::guest())
+    <body>
 
-<li><a href="/login">Login</a></li>
+        <section class="pageHeader">
 
-@else
+            <div class="container mx-auto">
 
-<li><a href="/visitors">Visitors</a></li>
+                <h1>Sign It!</h1>
 
-<li><a href="/visitors/create">Sign the guestbook</a></li>
+            </div>
 
-@endif
-
-</ul>
-
-</div>
-
-</section>
+        </section>
 
 
 
-<section class="pageTitle">
+            <ul class="navbar">
 
-<div class="container mx-auto">
+            <li><a href="/">Home</a></li>
 
-<h2>@yield('title')</h2>
+            @if (Auth::guest())
 
-</div>
+            <li><a href="/login">Login</a></li>
 
-</section>
+            @else
+
+            <li><a href="/visitors">Visitors</a></li>
+
+            <li><a href="/visitors/create">Sign the guestbook</a></li>
+
+            @endif
+
+            </ul>
+
+            </div>
+
+        </section>
 
 
 
-<section class="content">
+        <section class="pageTitle">
 
-<div class="container mx-auto">
+            <div class="container mx-auto">
 
-@yield('content')
+                <h2>@yield('title')</h2>
 
-</div>
+            </div>
 
-</section>
+        </section>
 
-</body>
+        <section class="content">
+
+            <div class="container mx-auto">
+
+            @yield('content')
+
+            </div>
+
+        </section>
+
+    </body>
 
 </html>
